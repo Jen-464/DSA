@@ -11,12 +11,7 @@
  * @return {ListNode}
  */
 
-var ListNode = function (val, next) {
-    this.val = (val === undefined ? 0 : val);
-    this.next = (next === undefined ? null : next);
-}
-
-var mergeTwoLists = function (list1, list2) {
+var mergeTwoLists = function(list1, list2) {
     if (list1 == null && list2 == null) return list1;
     else if (list1 == null && list2 != null) return list2;
     else if (list1 != null && list2 == null) return list1;
@@ -44,4 +39,19 @@ var mergeTwoLists = function (list1, list2) {
     return mergedList.next;
 };
 
-module.exports = { mergeTwoLists, ListNode };
+var ListNode = function(val, next) {
+    this.val = (val === undefined ? 0 : val);
+    this.next = (next === undefined ? null : next);
+}
+
+var arrayToLinkedList = function(arr) {
+    let head = new ListNode();
+    let current = head;
+    for (const value of arr) {
+        current.next = new ListNode(value);
+        current = current.next;
+    }
+    return head.next;
+}
+
+module.exports = { mergeTwoLists, arrayToLinkedList };

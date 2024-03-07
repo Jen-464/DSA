@@ -1,15 +1,5 @@
 "use strict";
-const { mergeTwoLists, ListNode } = require("./mergeTwoSortedLists");
-
-function arrayToLinkedList(arr) {
-    let head = new ListNode();
-    let current = head;
-    for (const value of arr) {
-        current.next = new ListNode(value);
-        current = current.next;
-    }
-    return head.next;
-}
+const { mergeTwoLists, arrayToLinkedList } = require("./mergeTwoSortedLists");
 
 describe("mergeTwoLists(list1, list2)", () => {
     it("[1,2,4] & [1,3,4] --> returns [1,1,2,3,4,4]", () => {
